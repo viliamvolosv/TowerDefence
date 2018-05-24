@@ -6,7 +6,7 @@ using UnityEngine;
 public class DamageOnCollision : MonoBehaviour
 {
     public int DamageAmmount = 1;
-
+    public bool DestroyAfterDamage = false;
 
     private void OnTriggerEnter(Collider c)
     {
@@ -17,5 +17,9 @@ public class DamageOnCollision : MonoBehaviour
         }
 
         damageable.TakeDamage(DamageAmmount);
+        if (DestroyAfterDamage)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
