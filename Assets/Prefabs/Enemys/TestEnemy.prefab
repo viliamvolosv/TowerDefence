@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 23686954916691512}
   - component: {fileID: 195208122195759868}
   - component: {fileID: 114716771369978728}
+  - component: {fileID: 54766324833812458}
+  - component: {fileID: 114017734806622106}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -85,6 +87,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1587611800466002}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54766324833812458
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1587611800466002}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114017734806622106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1587611800466002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbe2fd6dadb43241b045977ea39ac4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAmmount: 1
+  DestroyAfterDamage: 1
 --- !u!114 &114716771369978728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef84923b5698d043a2b2696f19183ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 0}
+  Target: {fileID: 0}
 --- !u!136 &136952938297321822
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -119,7 +149,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
