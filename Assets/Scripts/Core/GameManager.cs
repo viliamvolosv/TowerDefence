@@ -14,15 +14,12 @@ public class GameManager : MonoBehaviour
     public int CurrentGold
     {
         get { return _currentGold; }
-        set
+        private set
         {
             _currentGold = value;
             OnGoldAmountChange();
         }
     }
-
-    public UnityEvent OnGoldAmountChangeEvent;
-
 
     public enum GameStateEnum
     {
@@ -42,6 +39,11 @@ public class GameManager : MonoBehaviour
             OnChageGameState();
         }
     }
+    
+    [Header("Events")]
+    public UnityEvent OnGoldAmountChangeEvent;
+    public UnityEvent<GameStateEnum> OnGameStateChangeEvent;
+    
 
     void Start()
     {
@@ -52,6 +54,10 @@ public class GameManager : MonoBehaviour
 
     private void OnChageGameState()
     {
+        if (OnGameStateChangeEvent !=null)
+        {
+            OnGameStateChangeEvent.Invoke(GameState);
+        }
     }
 
     private void OnGoldAmountChange()
