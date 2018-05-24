@@ -278,6 +278,7 @@ MonoBehaviour:
   GoldCountText: {fileID: 114921547441401144}
   BaseHpText: {fileID: 114817809459041458}
   WavesInfo: {fileID: 114234718392924428}
+  StartNextWaveButton: {fileID: 114686553248947600}
   GameManager: {fileID: 0}
 --- !u!114 &114615451359769004
 MonoBehaviour:
@@ -609,7 +610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 186.3, y: 59.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224685424161759640

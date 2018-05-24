@@ -11,6 +11,7 @@ public class LevelUIBehavior : MonoBehaviour
     public Text GoldCountText;
     public Text BaseHpText;
     public Text WavesInfo;
+    public Button StartNextWaveButton;
     public GameManager GameManager;
 
     // Use this for initialization
@@ -20,11 +21,21 @@ public class LevelUIBehavior : MonoBehaviour
         Assert.IsNotNull(GameManager);
         Assert.IsNotNull(BaseHpText);
         Assert.IsNotNull(WavesInfo);
+        Assert.IsNotNull(StartNextWaveButton);
 
         GameManager.OnGoldAmountChangeAction += OnGoldAmountChangeEvent;
+        GameManager.OnGameStateChangeAction += OnGameStateChangeAction;
         GameManager.BaseDamageable.OnChangeHpAction += OnBaseDamage;
         BaseHpText.text = "Base HP: " + GameManager.BaseDamageable.CurrentHp + " / " +
                           GameManager.BaseDamageable.StartHp;
+        WavesInfo.text = "Waves: " + (GameManager.CurrentWaveCount + 1) + " /" + GameManager.LevelSettings.Waves.Length;
+        StartNextWaveButton.onClick.AddListener(GameManager.StartNextWave);
+    }
+
+    private void OnGameStateChangeAction(GameManager.GameStateEnum state)
+    {
+        StartNextWaveButton.gameObject.SetActive(state == GameManager.GameStateEnum.Build);
+        WavesInfo.text = "Waves: " + (GameManager.CurrentWaveCount + 1) + " /" + GameManager.LevelSettings.Waves.Length;
     }
 
     void OnGoldAmountChangeEvent()
@@ -41,5 +52,6 @@ public class LevelUIBehavior : MonoBehaviour
     {
         GameManager.OnGoldAmountChangeAction -= OnGoldAmountChangeEvent;
         GameManager.BaseDamageable.OnChangeHpAction -= OnBaseDamage;
+        StartNextWaveButton.onClick.RemoveAllListeners();
     }
 }
