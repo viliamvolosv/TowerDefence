@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
     {
         _currentWaveCount++;
         _waveSettings = LevelSettings.Waves[_currentWaveCount];
+        GameState = GameStateEnum.Wave;
         StartCoroutine(EnemySpawnEnumerator());
     }
 
@@ -106,5 +107,7 @@ public class GameManager : MonoBehaviour
             var enemy = go.GetComponent<EnemyBase>();
             enemy.Target = BaseTrs;
         }
+
+        GameState = GameStateEnum.Build;
     }
 }
