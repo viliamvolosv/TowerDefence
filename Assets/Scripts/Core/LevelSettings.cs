@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "TowerDefence/LevelSettings")]
+public class LevelSettings : ScriptableObject
+{
+    public int StartGold = 100;
+    public int StartHp = 10;
+    public int[] Waves = new[] {3, 5, 7, 10};
+}
