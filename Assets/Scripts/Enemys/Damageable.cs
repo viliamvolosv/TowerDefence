@@ -14,7 +14,6 @@ public class Damageable : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("TakeDamage "+damage);
         _currentHp -= damage;
     }
 }

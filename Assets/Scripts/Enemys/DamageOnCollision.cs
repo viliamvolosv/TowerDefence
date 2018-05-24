@@ -7,9 +7,9 @@ public class DamageOnCollision : MonoBehaviour
 {
     public int DamageAmmount = 1;
 
-    protected void OnCollisionEnter(Collision c)
+
+    private void OnTriggerEnter(Collider c)
     {
-        Debug.Log("OnCollisionEnter");
         var damageable = c.gameObject.GetComponent<Damageable>();
         if (damageable == null)
         {
