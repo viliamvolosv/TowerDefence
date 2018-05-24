@@ -21,8 +21,8 @@ public class LevelUIBehavior : MonoBehaviour
         Assert.IsNotNull(BaseHpText);
         Assert.IsNotNull(WavesInfo);
 
-        GameManager.OnGoldAmountChangeEvent += OnGoldAmountChangeEvent;
-        GameManager.BaseDamageable.OnChangeHpEvent += OnBaseDamage;
+        GameManager.OnGoldAmountChangeAction += OnGoldAmountChangeEvent;
+        GameManager.BaseDamageable.OnChangeHpAction += OnBaseDamage;
         BaseHpText.text = "Base HP: " + GameManager.BaseDamageable.CurrentHp + " / " +
                           GameManager.BaseDamageable.StartHp;
     }
@@ -39,7 +39,7 @@ public class LevelUIBehavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.OnGoldAmountChangeEvent -= OnGoldAmountChangeEvent;
-        GameManager.BaseDamageable.OnChangeHpEvent -= OnBaseDamage;
+        GameManager.OnGoldAmountChangeAction -= OnGoldAmountChangeEvent;
+        GameManager.BaseDamageable.OnChangeHpAction -= OnBaseDamage;
     }
 }

@@ -8,7 +8,7 @@ public class Damageable : MonoBehaviour
     public int StartHp = 10;
     private int _currentHp;
 
-    public UnityAction<Damageable> OnChangeHpEvent;
+    public UnityAction<Damageable> OnChangeHpAction;
 
     public int CurrentHp
     {
@@ -16,8 +16,8 @@ public class Damageable : MonoBehaviour
         private set
         {
             _currentHp = value;
-            if (OnChangeHpEvent != null)
-                OnChangeHpEvent(this);
+            if (OnChangeHpAction != null)
+                OnChangeHpAction(this);
         }
     }
 

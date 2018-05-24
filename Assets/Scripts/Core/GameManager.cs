@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Transform BaseTrs;
     private Damageable _baseDamageable;
     private int _currentGold = 0;
+    private int _currentWave = 0;
 
     public int CurrentGold
     {
@@ -46,8 +47,13 @@ public class GameManager : MonoBehaviour
         get { return _baseDamageable; }
     }
 
-    [Header("Events")] public UnityAction OnGoldAmountChangeEvent;
-    public UnityAction<GameStateEnum> OnGameStateChangeEvent;
+    public int CurrentWave
+    {
+        get { return _currentWave; }
+    }
+
+    public UnityAction OnGoldAmountChangeAction;
+    public UnityAction<GameStateEnum> OnGameStateChangeAction;
 
     private void Awake()
     {
@@ -66,17 +72,17 @@ public class GameManager : MonoBehaviour
 
     private void OnChageGameState()
     {
-        if (OnGameStateChangeEvent != null)
+        if (OnGameStateChangeAction != null)
         {
-            OnGameStateChangeEvent(GameState);
+            OnGameStateChangeAction(GameState);
         }
     }
 
     private void OnGoldAmountChange()
     {
-        if (OnGoldAmountChangeEvent != null)
+        if (OnGoldAmountChangeAction != null)
         {
-            OnGoldAmountChangeEvent();
+            OnGoldAmountChangeAction();
         }
     }
 }
