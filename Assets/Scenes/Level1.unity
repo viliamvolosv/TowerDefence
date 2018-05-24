@@ -1871,11 +1871,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelSettings: {fileID: 11400000, guid: 94fbf6ae9bec2ca44b205cf9468a7614, type: 2}
   BaseTrs: {fileID: 212122490}
-  OnGoldAmountChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1402610723
 Transform:
   m_ObjectHideFlags: 0

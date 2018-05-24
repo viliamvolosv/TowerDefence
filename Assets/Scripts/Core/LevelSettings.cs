@@ -8,5 +8,5 @@ public class LevelSettings : ScriptableObject
 {
     public int StartGold = 100;
     public int StartHp = 10;
-    public int[] Waves = new[] {3, 5, 7, 10};
+    public WaveSettings[] Waves;
 }

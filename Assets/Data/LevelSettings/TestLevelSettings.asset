@@ -13,4 +13,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartGold: 100
   StartHp: 10
-  Waves: 0300000005000000070000000a000000
+  Waves:
+  - EnemyPrefab: {fileID: 1587611800466002, guid: 7fd4d366be49afa4fa5fc9086555ee6f,
+      type: 2}
+    Count: 3
+    TimeIntervalSec: 1
+  - EnemyPrefab: {fileID: 1587611800466002, guid: 7fd4d366be49afa4fa5fc9086555ee6f,
+      type: 2}
+    Count: 5
+    TimeIntervalSec: 1
+  - EnemyPrefab: {fileID: 1587611800466002, guid: 7fd4d366be49afa4fa5fc9086555ee6f,
+      type: 2}
+    Count: 7
+    TimeIntervalSec: 1
+  - EnemyPrefab: {fileID: 1587611800466002, guid: 7fd4d366be49afa4fa5fc9086555ee6f,
+      type: 2}
+    Count: 10
+    TimeIntervalSec: 1
