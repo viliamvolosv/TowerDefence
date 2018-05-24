@@ -8,7 +8,8 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public LevelSettings LevelSettings;
-
+    public Transform BaseTrs;
+    private Damageable _baseDamageable;
     private int _currentGold = 0;
 
     public int CurrentGold
@@ -39,32 +40,43 @@ public class GameManager : MonoBehaviour
             OnChageGameState();
         }
     }
-    
-    [Header("Events")]
-    public UnityEvent OnGoldAmountChangeEvent;
-    public UnityEvent<GameStateEnum> OnGameStateChangeEvent;
-    
+
+    public Damageable BaseDamageable
+    {
+        get { return _baseDamageable; }
+    }
+
+    [Header("Events")] public UnityAction OnGoldAmountChangeEvent;
+    public UnityAction<GameStateEnum> OnGameStateChangeEvent;
+
+    private void Awake()
+    {
+        Assert.IsNotNull(LevelSettings, " You need to setup level settings");
+        Assert.IsNotNull(BaseTrs);
+        _baseDamageable = BaseTrs.GetComponent<Damageable>();
+        Assert.IsNotNull(_baseDamageable);
+    }
+
 
     void Start()
     {
-        Assert.IsNotNull(LevelSettings, " You need to setup level settings");
         CurrentGold = LevelSettings.StartGold;
         GameState = GameStateEnum.Build;
     }
 
     private void OnChageGameState()
     {
-        if (OnGameStateChangeEvent !=null)
+        if (OnGameStateChangeEvent != null)
         {
-            OnGameStateChangeEvent.Invoke(GameState);
+            OnGameStateChangeEvent(GameState);
         }
     }
 
     private void OnGoldAmountChange()
     {
-        if (OnGoldAmountChangeEvent !=null)
+        if (OnGoldAmountChangeEvent != null)
         {
-            OnGoldAmountChangeEvent.Invoke();
+            OnGoldAmountChangeEvent();
         }
     }
 }
