@@ -16,6 +16,7 @@ public enum PlacementTileState
 /// </summary>
 public class PlacementTile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler , IPointerExitHandler
 {
+    private TowerBase currentTower = null;
 
     /// <summary>
     /// Material to use when this tile is empty
@@ -60,11 +61,14 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     {
         LevelUIBehavior.SelectedTowerBase.transform.position = transform.position;
         LevelUIBehavior.SelectedTowerBase.transform.rotation = transform.rotation;
+        currentTower = LevelUIBehavior.SelectedTowerBase;
         LevelUIBehavior.SelectedTowerBase = null;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if(currentTower!=null)
+            return;
         LevelUIBehavior.AboveTile = true;
         if(LevelUIBehavior.SelectedTowerBase == null)
             return;
@@ -75,6 +79,8 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if(currentTower!=null)
+            return;
         LevelUIBehavior.AboveTile = false;
     }
 }
