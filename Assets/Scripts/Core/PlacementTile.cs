@@ -14,10 +14,8 @@ public enum PlacementTileState
 /// <summary>
 /// Simple class to illustrate tile placement locations
 /// </summary>
-public class PlacementTile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
+public class PlacementTile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler , IPointerExitHandler
 {
-
-    public static TowerBase SSelectedTower;
 
     /// <summary>
     /// Material to use when this tile is empty
@@ -60,14 +58,23 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Click");
+        LevelUIBehavior.SelectedTowerBase.transform.position = transform.position;
+        LevelUIBehavior.SelectedTowerBase.transform.rotation = transform.rotation;
+        LevelUIBehavior.SelectedTowerBase = null;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(PlacementTile.SSelectedTower == null)
+        LevelUIBehavior.AboveTile = true;
+        if(LevelUIBehavior.SelectedTowerBase == null)
             return;
-        PlacementTile.SSelectedTower.transform.position = transform.position;
-        PlacementTile.SSelectedTower.transform.rotation = transform.rotation;
+        LevelUIBehavior.SelectedTowerBase.transform.position = transform.position;
+        LevelUIBehavior.SelectedTowerBase.transform.rotation = transform.rotation;
+
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        LevelUIBehavior.AboveTile = false;
     }
 }

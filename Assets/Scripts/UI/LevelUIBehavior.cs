@@ -15,6 +15,7 @@ public class LevelUIBehavior : MonoBehaviour
     public GameManager GameManager;
 
     public static TowerBase SelectedTowerBase;
+    public static bool AboveTile = false;
 
     // Use this for initialization
     void Start()
@@ -75,7 +76,7 @@ public class LevelUIBehavior : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) && SelectedTowerBase != null)
             DestroyTower();
-        if (SelectedTowerBase != null)
+        if (SelectedTowerBase != null && !AboveTile)
         {
             Vector3 pos = Input.mousePosition;
             pos.z = transform.position.z - Camera.main.transform.position.z;
