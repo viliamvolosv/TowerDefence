@@ -64,6 +64,7 @@ public class LevelUIBehavior : MonoBehaviour
             DestroyTower();
         var go = Instantiate(GameManager.TowerPrefab);
         SelectedTowerBase = go.GetComponent<TowerBase>();
+        SelectedTowerBase.ShowRadiusVisualizers();
     }
 
     void DestroyTower()

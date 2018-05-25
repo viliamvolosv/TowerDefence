@@ -63,6 +63,7 @@ public class PlacementTile : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         LevelUIBehavior.SelectedTowerBase.transform.rotation = transform.rotation;
         currentTower = LevelUIBehavior.SelectedTowerBase;
         LevelUIBehavior.SelectedTowerBase = null;
+        currentTower.HideRadiusVisualizers();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
