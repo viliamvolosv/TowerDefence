@@ -1416,6 +1416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba3b37639af3943acc224da91d6f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementTilePrefab: {fileID: 114984877207521344, guid: daf6be2c76a26f1478e949ff1ca2fbc6,
+    type: 2}
   Dimensions:
     x: 6
     y: 2
@@ -1613,6 +1615,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba3b37639af3943acc224da91d6f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementTilePrefab: {fileID: 114984877207521344, guid: daf6be2c76a26f1478e949ff1ca2fbc6,
+    type: 2}
   Dimensions:
     x: 2
     y: 14
@@ -1670,6 +1674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba3b37639af3943acc224da91d6f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementTilePrefab: {fileID: 114984877207521344, guid: daf6be2c76a26f1478e949ff1ca2fbc6,
+    type: 2}
   Dimensions:
     x: 2
     y: 13
@@ -2047,6 +2053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba3b37639af3943acc224da91d6f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementTilePrefab: {fileID: 114984877207521344, guid: daf6be2c76a26f1478e949ff1ca2fbc6,
+    type: 2}
   Dimensions:
     x: 2
     y: 6
@@ -2704,6 +2712,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba3b37639af3943acc224da91d6f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementTilePrefab: {fileID: 114984877207521344, guid: daf6be2c76a26f1478e949ff1ca2fbc6,
+    type: 2}
   Dimensions:
     x: 2
     y: 14
@@ -2889,6 +2899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba3b37639af3943acc224da91d6f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementTilePrefab: {fileID: 114984877207521344, guid: daf6be2c76a26f1478e949ff1ca2fbc6,
+    type: 2}
   Dimensions:
     x: 4
     y: 2
@@ -3022,6 +3034,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba3b37639af3943acc224da91d6f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementTilePrefab: {fileID: 114984877207521344, guid: daf6be2c76a26f1478e949ff1ca2fbc6,
+    type: 2}
   Dimensions:
     x: 2
     y: 12
@@ -3604,6 +3618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abba3b37639af3943acc224da91d6f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementTilePrefab: {fileID: 114984877207521344, guid: daf6be2c76a26f1478e949ff1ca2fbc6,
+    type: 2}
   Dimensions:
     x: 6
     y: 2
