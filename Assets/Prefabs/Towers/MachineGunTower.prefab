@@ -55,6 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4959344690457368}
+  - component: {fileID: 114674170984078890}
   m_Layer: 0
   m_Name: MachineGunTower
   m_TagString: Untagged
@@ -219,3 +220,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114674170984078890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959491411841310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5222c923877e02648b1ed7c67c528814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

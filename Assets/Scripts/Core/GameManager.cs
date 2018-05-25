@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private int _currentGold = 0;
     private int _currentWaveCount = -1;
     private WaveSettings _waveSettings;
+    public TowerBase TowerPrefab;
 
     public int CurrentGold
     {
@@ -65,6 +66,8 @@ public class GameManager : MonoBehaviour
         Assert.IsNotNull(BaseTrs);
         _baseDamageable = BaseTrs.GetComponent<Damageable>();
         Assert.IsNotNull(_baseDamageable);
+        Assert.IsNotNull(TowerPrefab);
+        
     }
 
 

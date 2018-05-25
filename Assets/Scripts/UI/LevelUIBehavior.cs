@@ -14,6 +14,8 @@ public class LevelUIBehavior : MonoBehaviour
     public Button StartNextWaveButton;
     public GameManager GameManager;
 
+    public static TowerBase SelectedTowerBase;
+
     // Use this for initialization
     void Start()
     {
@@ -53,5 +55,31 @@ public class LevelUIBehavior : MonoBehaviour
         GameManager.OnGoldAmountChangeAction -= OnGoldAmountChangeEvent;
         GameManager.BaseDamageable.OnChangeHpAction -= OnBaseDamage;
         StartNextWaveButton.onClick.RemoveAllListeners();
+    }
+
+    public void CreateTower()
+    {
+        if (SelectedTowerBase != null)
+            DestroyTower();
+        var go = Instantiate(GameManager.TowerPrefab);
+        SelectedTowerBase = go.GetComponent<TowerBase>();
+    }
+
+    void DestroyTower()
+    {
+        Destroy(SelectedTowerBase.gameObject);
+        SelectedTowerBase = null;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1) && SelectedTowerBase != null)
+            DestroyTower();
+        if (SelectedTowerBase != null)
+        {
+            Vector3 pos = Input.mousePosition;
+            pos.z = transform.position.z - Camera.main.transform.position.z;
+            SelectedTowerBase.transform.position = Camera.main.ScreenToWorldPoint(pos);
+        }
     }
 }

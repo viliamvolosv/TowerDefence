@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Core.Utilities;
-using TowerDefense.UI.HUD;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
